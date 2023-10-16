@@ -36,7 +36,7 @@ public class Withdraw extends HttpServlet {
 
 			bankdao.update(bankaccount);
 
-			res.getWriter().print("<h1>Amount has been Withdrawn succesfully. Khush Raho zindagi mai aur kya chahiye</h1>");
+			res.getWriter().print("<h1>Amount has been Withdrawn succesfully. Paisa gaya tumhara</h1>");
 			res.getWriter().print("<h1>Updated Balance " + bankdao.fetchByAccno(acno).getAmount() + "</h1>");
 
 		}
