@@ -1,10 +1,14 @@
 package DTO;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -29,6 +33,9 @@ public class BankAccount {
 
 	@ManyToOne
 	Customer customer;
+
+	@OneToMany(cascade = CascadeType.ALL) // directly we can save the data without et.begin(),em.persist(),et.commit.
+	List<Transaction> bankTransactions;
 
 	public long getAccountNo() {
 		return AccountNo;
@@ -76,6 +83,14 @@ public class BankAccount {
 
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
+	}
+
+	public List<Transaction> getBankTransactions() {
+		return bankTransactions;
+	}
+
+	public void setBankTransactions(List<Transaction> bankTransactions) {
+		this.bankTransactions = bankTransactions;
 	}
 
 }

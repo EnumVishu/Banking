@@ -37,8 +37,8 @@
 
 <a href="Deposite.html" class="button">Deposit</a>
 <a href="Withdraw.html" class="button">Withdraw</a>
-<button class="button">Check Balance</button>
-<button class="button">View Transaction History</button>
+<a href="CheckBalance.jsp" class="button">Check Balance</a>
+<a href="TransactionHistory.jsp" class="button">View Transaction History</a>
 
 </body>
 </html>
