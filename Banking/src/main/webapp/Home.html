@@ -1,15 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        button:nth-child(odd) {
+            background-color: #2ecc71;
+        }
+
+        button:nth-child(even) {
+            background-color: #3498db;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-	<h1> Welcome to Banking Home Page</h1> <br><br>
-	
-	<a href="Customer_Signup.html" target="_blank"><button>Customer_Signup</button></a>
-	<a href="Customer_Login.html" target="_blank"><button>Customer_Login</button></a>
+    <h1>Welcome to Banking Home Page</h1> <br><br>
 
-
+    <a href="Customer_Signup.html" target="_blank"><button>Customer Signup</button></a>
+    <a href="Customer_Login.html" target="_blank"><button>Customer Login</button></a>
 </body>
 </html>

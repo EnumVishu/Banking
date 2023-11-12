@@ -1,6 +1,8 @@
 package Contoller;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import DAO.Bank_Dao;
 import DTO.BankAccount;
+import DTO.Transaction;
 
 @WebServlet("/withdraw")
 public class Withdraw extends HttpServlet {
@@ -32,7 +35,19 @@ public class Withdraw extends HttpServlet {
 			res.getWriter().print("<h1>Limit Excedded. Your Actual limit is </h1>" + bankaccount.getAccountLimit());
 
 		} else {
+			Transaction transaction = new Transaction();
+
 			bankaccount.setAmount(bankaccount.getAmount() - amount); // before putting any data inside database we should set the data
+
+			transaction.setBalance(bankaccount.getAmount());
+			transaction.setDeposit(0);
+			transaction.setLocalDateTime(LocalDateTime.now());
+			transaction.setWithdrow(amount);
+
+			bankdao.update(bankaccount);
+
+			List<Transaction> list = bankaccount.getBankTransactions();
+			list.add(transaction);
 
 			bankdao.update(bankaccount);
 
